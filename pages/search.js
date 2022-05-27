@@ -6,10 +6,10 @@ const SearchPage = () => {
   const router = useRouter();
 
   // console.log(JSON?.parse(router.query.data));
-  const articles = JSON?.parse(router.query.data);
+  const articles = JSON.parse(router.query.data);
   return (
     <div className="grid grid-cols-1 row-auto mt-8 md:grid-cols-2 lg:gap-y-8 ">
-      {articles?.map((article) => {
+      {articles.map((article) => {
         return <Card article={article} key={article.number} />;
       })}
       <a href="#top" className="col-span-1 md:col-span-2">
