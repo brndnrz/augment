@@ -1,12 +1,17 @@
 import Card from "../components/Card";
 import { BsHandIndexThumb } from "react-icons/bs";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
 const SearchPage = () => {
   const router = useRouter();
+  const [articles, setArticles] = useState([]);
+
+  useEffect(() => {
+    setArticles(JSON.parse(router.query.data));
+  }, [router]);
 
   // console.log(JSON?.parse(router.query.data));
-  const articles = JSON.parse(router.query.data);
   return (
     <div className="grid grid-cols-1 row-auto mt-8 md:grid-cols-2 lg:gap-y-8 ">
       {articles.map((article) => {

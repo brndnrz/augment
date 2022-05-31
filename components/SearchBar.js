@@ -8,7 +8,7 @@ const Search = () => {
   const SEARCH_API = `https://newsapi.org/v2/everything?q=${searchTerm}&apiKey=aa7502d584ce420682cfa2eba9559d0d
   `;
   const handleChange = (e) => {
-    setSearchTerm(e.target.value);
+    setSearchTerm(e.target.value.replace(/\s+/g, "-"));
   };
 
   const handleSubmit = (e) => {
