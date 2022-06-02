@@ -9,7 +9,7 @@ const SearchPage = () => {
 
   useEffect(() => {
     setArticles(JSON.parse(router.query.data));
-  }, [router]);
+  }, [router.query.data]);
 
   // console.log(JSON?.parse(router.query.data));
   return (
