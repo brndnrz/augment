@@ -8,7 +8,8 @@ const SearchPage = () => {
   // const [articles, setArticles] = useState([]);
 
   // setArticles(JSON.parse(router.query.data));
-  let articles = router.query.data;
+  let articles = JSON.parse(router.query.data);
+  // console.log(articles);
   // useEffect(() => {
   //   console.log("useEffect ran");
   //   setArticles(JSON.parse(router.query.data));

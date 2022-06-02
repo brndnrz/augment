@@ -17,12 +17,12 @@ const Search = () => {
       fetch(SEARCH_API)
         .then((res) => res.json())
         .then((data) => {
-          // console.log(JSON.stringify(data.articles));
+          // console.log(data.articles);
           router.push(
             {
               pathname: "/search",
               query: {
-                data: data.articles,
+                data: JSON.stringify(data.articles),
               },
             },
             `/search-${searchTerm}`
