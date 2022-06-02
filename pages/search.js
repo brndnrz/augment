@@ -5,11 +5,14 @@ import { useEffect, useState } from "react";
 
 const SearchPage = () => {
   const router = useRouter();
-  const [articles, setArticles] = useState([]);
+  // const [articles, setArticles] = useState([]);
 
-  useEffect(() => {
-    setArticles(JSON.parse(router.query.data));
-  }, [router.query.data, setArticles]);
+  // setArticles(JSON.parse(router.query.data));
+  let articles = JSON.parse(router.query.data);
+  // useEffect(() => {
+  //   console.log("useEffect ran");
+  //   setArticles(JSON.parse(router.query.data));
+  // }, [router]);
 
   // console.log(JSON?.parse(router.query.data));
   return (
