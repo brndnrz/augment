@@ -22,7 +22,7 @@ const Search = () => {
             {
               pathname: "/search",
               query: {
-                data: JSON.stringify(data.articles),
+                data: data.articles,
               },
             },
             `/search-${searchTerm}`
