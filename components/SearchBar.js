@@ -5,8 +5,7 @@ import { useState } from "react";
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const router = useRouter();
-  const SEARCH_API = `https://newsapi.org/v2/everything?q=${searchTerm}&apiKey=aa7502d584ce420682cfa2eba9559d0d
-  `;
+
   const handleChange = (e) => {
     setSearchTerm(e.target.value.replace(/\s+/g, "-"));
   };
@@ -14,20 +13,15 @@ const Search = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (searchTerm) {
-      fetch(SEARCH_API)
-        .then((res) => res.json())
-        .then((data) => {
-          // console.log(data.articles);
-          router.push(
-            {
-              pathname: "/search",
-              query: {
-                data: JSON.stringify(data.articles),
-              },
-            },
-            `/search-${searchTerm}`
-          );
-        });
+      router.push(
+        {
+          pathname: "/search",
+          query: {
+            term: searchTerm,
+          },
+        },
+        `/search-${searchTerm}`
+      );
     }
     searchBar.value = "";
     setSearchTerm("");

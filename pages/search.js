@@ -5,17 +5,21 @@ import { useEffect, useState } from "react";
 
 const SearchPage = () => {
   const router = useRouter();
-  // const [articles, setArticles] = useState([]);
+  const [articles, setArticles] = useState([]);
+  let searchTerm = router.query.term;
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch(
+        `https://newsapi.org/v2/everything?q=${searchTerm}&apiKey=aa7502d584ce420682cfa2eba9559d0d`
+      );
+      const newTerms = await res.json();
+      const newArticles = await newTerms.articles;
+      setArticles(newArticles);
+    };
 
-  // setArticles(JSON.parse(router.query.data));
-  let articles = JSON.parse(router.query.data);
-  // console.log(articles);
-  // useEffect(() => {
-  //   console.log("useEffect ran");
-  //   setArticles(JSON.parse(router.query.data));
-  // }, [router]);
+    fetchData();
+  }, [searchTerm]);
 
-  // console.log(JSON?.parse(router.query.data));
   return (
     <div className="grid grid-cols-1 row-auto mt-8 md:grid-cols-2 lg:gap-y-8 ">
       {articles.map((article) => {
