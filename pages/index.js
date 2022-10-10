@@ -35,16 +35,17 @@ export default function Home({ articles, feature }) {
         <div className="w-40 mx-auto mt-16 mb-8 border-t-4 sm:w-60 md:w-80 md:col-span-2 border-highlightBlue"></div>
 
         {articles.map((article) => {
+          let key = article.publishedAt + article.number;
           return (
             <>
-              <Card article={article} key={article.number} />
+              <Card article={article} key={key} />
             </>
           );
         })}
 
         <a
           href="#top"
-          className="flex items-center justify-center w-3/5 max-w-md col-span-2 gap-4 py-2 mx-auto my-24 bg-gray-200 rounded-md cursor-pointer font-Inter md:text-lg sm:w-4/5 sm:py-4"
+          className="flex items-center justify-center w-3/5 max-w-md col-span-1 gap-4 py-2 mx-auto my-24 bg-gray-200 rounded-md md:col-span-2 text-lightGrey font-Inter md:text-lg sm:w-4/5 sm:py-4"
         >
           <BsHandIndexThumb />
           <h3>Back To Top</h3>
