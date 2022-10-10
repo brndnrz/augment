@@ -25,7 +25,7 @@ export default function Home({ articles, feature }) {
             />
             <div className="absolute rounded-2xl top-0 w-full h-full bg-gradient-to-b from-lightGradientBlue/5 to-highlightBlue/[.58]"></div>
             <div className="absolute bottom-0 left-0 flex items-center w-full p-2 text-left rounded-2xl h-2/6 backdrop-blur-sm">
-              <h1 className="w-full text-sm text-xl line-clamp-1 text-backgroundWhite sm:text-base md:text-lg md:px-6 font-Inter">
+              <h1 className="w-full text-xl line-clamp-1 text-backgroundWhite sm:text-base md:text-lg md:px-6 font-Inter">
                 {feature.title}
               </h1>
             </div>
@@ -42,11 +42,12 @@ export default function Home({ articles, feature }) {
           );
         })}
 
-        <a href="#top" className="col-span-1 md:col-span-2">
-          <div className="flex items-center justify-center w-3/5 max-w-md col-span-2 gap-4 py-2 mx-auto my-32 bg-gray-200 rounded-md cursor-pointer text-lightGrey font-Inter md:text-lg sm:w-4/5 sm:py-4">
-            <BsHandIndexThumb />
-            <h3>Back To Top</h3>
-          </div>
+        <a
+          href="#top"
+          className="flex items-center justify-center w-3/5 max-w-md col-span-2 gap-4 py-2 mx-auto my-24 bg-gray-200 rounded-md cursor-pointer font-Inter md:text-lg sm:w-4/5 sm:py-4"
+        >
+          <BsHandIndexThumb />
+          <h3>Back To Top</h3>
         </a>
       </main>
     </>
